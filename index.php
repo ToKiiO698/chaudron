@@ -726,6 +726,7 @@
                 $email = $_POST['email'];
                 $subject = $_POST['subject'];
                 $message = $_POST['message'];
+                $date = $_POST['date'];
 
               // TODO: Process the data (e.g., send an email).
 
