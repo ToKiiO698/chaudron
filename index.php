@@ -732,7 +732,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message = $_POST['message'];
     $date = $_POST['date'];
 
-    require 'path/to/PHPMailer/src/Exception.php';
+    require 'PHPMailer/src/Exception.php';
     require 'path/to/PHPMailer/src/PHPMailer.php';
     require 'path/to/PHPMailer/src/SMTP.php';
     // Crée une nouvelle instance 
