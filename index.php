@@ -704,9 +704,6 @@
                   <input type="email" class="form-control" name="email" id="email" placeholder="Votre e-mail" required>
                 </div>
               </div>
-              <div class=" form-group mt-3">
-                  <input type="date" class="form-control" name="date" id="date" placeholder="date" required>
-                </div>
               <div class="form-group mt-3">
                 <input type="text" class="form-control" name="subject" id="subject" placeholder="Objet" required>
               </div>
@@ -720,6 +717,8 @@
               </div>
               <div class="text-center"><button type="submit">Envoyez</button></div>
               <?php
+              error_reporting(E_ALL);
+              ini_set('display_errors', 1);
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -730,7 +729,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $subject = $_POST['subject'];
     $message = $_POST['message'];
-    $date = $_POST['date'];
 
     require 'PHPMailer/src/Exception.php';
     require 'PHPMailer/src/PHPMailer.php';
@@ -758,7 +756,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->Body = "<h2>Nouveau message de contact</h2>
                        <p><strong>Nom:</strong> $name</p>
                        <p><strong>E-mail:</strong> $email</p>
-                       <p><strong>Date:</strong> $date</p>
                        <p><strong>Message:</strong><br>$message</p>";
 
         // Envoyer l'e-mail
