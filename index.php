@@ -704,7 +704,7 @@
                   <input type="email" class="form-control" name="email" id="email" placeholder="Votre e-mail" required>
                 </div>
               </div>
-              <div class="col-md-6 form-group mt-3 mt-md-0">
+              <div class="col-md-6 form-group mt-3">
                   <input type="email" class="form-control" name="email" id="email" placeholder="Votre e-mail" required>
                 </div>
               <div class="form-group mt-3">
