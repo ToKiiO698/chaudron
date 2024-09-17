@@ -2,10 +2,10 @@
 <html lang="fr">
 
 <head>
-  <meta charset="utf-8 ">
+  <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Restaurant | Le Chaudron</title>
+  <title>Restarant Le Chaudron</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -49,12 +49,12 @@
   <header id="header" class="header d-flex align-items-center">
 
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-      <a href="accueil.html" class="logo d-flex align-items-center">
+      <a href="acceuil.html" class="logo d-flex align-items-center">
         <h1>Le Chaudron<span>.</span></h1>
       </a>
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="#accueil">Accueil</a></li>
+          <li><a href="#acceuil">Acceuil</a></li>
           <li><a href="#a_propos">A propos</a></li>
           <li><a href="#produits">Plats & Menus</a></li>
           <li><a href="#services">Services</a></li>
@@ -79,11 +79,11 @@
         <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center text-center text-lg-start">
           <h2>Bienvenue au <span>Chaudron</span></h2>
             <p>Dans un cadre chaleureux et atypique ! </br>
-              Chargé d'histoire.
+              Chargé histoire.
           </p>
           <div class="d-flex justify-content-center justify-content-lg-start">
             <a href="#contact" class="btn-get-started">Nous contacter</a>
-            <a href="#contact" class="btn-get-started">Réservez une table</a>          </div>
+            <a href="#contact" class="btn-get-started">Reservez une table</a>          </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2">
           <img src="assets/img/background-home.png" class="img-fluid background-image-header background-image-header-position-left background-image-header-position-bottom" alt="" data-aos="zoom-out" data-aos-delay="100">
@@ -209,7 +209,7 @@
                 <div class="col-xl-4 col-md-6 portfolio-item filter-product">
                   <div class="portfolio-wrap">
                     <a href="assets/img/menu/carte.png" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/menu/carte.png" class="img-fluid" alt="">
-                      <div class="portfolio-info">
+                    <div class="portfolio-info">
                       <h4>Plats chaud 1</h4>
                       <p>plats chaud 1</p>
                     </div></a>
@@ -347,7 +347,7 @@
 
         <div class="section-header">
           <h2>Nos services</h2>
-          <p>Veuillez découvrir les service que nous vous proposons pour votre confort tous au long de votre repas. </p>
+          <p>Veuillez découvrir les ervice que nous vous proposons pour votre confort tous au long de votre repas. </p>
         </div>
 
         <div class="row gy-4" data-aos="fade-up" data-aos-delay="100">
@@ -398,7 +398,7 @@
               <img src="assets/img/services/bebe.png" class="img-fluid  " alt="">
               </div>
               <h3>Adapter aux enfants</h3>
-              <p>Nous disposons de chaises hautes adaptées aux enfants et d'un menu Marmiton adapté pour eux.</p>
+              <p>Nous sommes équipés de chaises hautes pour les enfants, et d'un menus Marmiton adapté pour les enfants</p>
             </div>
           </div><!-- End Service Item -->
 
@@ -407,7 +407,7 @@
               <div class="icon">
                 <i class="bi bi-chat-square-text"></i>
               </div>
-              <h3>Dolori Arcteto</h3>
+              <h3>Dolori Architecto</h3>
               <p>Hic molestias ea quibusdam eos. Fugiat enim doloremque aut neque non et debitis iure. Corrupti recusandae ducimus enim.</p>
             </div>
           </div><!-- End Service Item -->
@@ -704,6 +704,9 @@
                   <input type="email" class="form-control" name="email" id="email" placeholder="Votre e-mail" required>
                 </div>
               </div>
+              <div class=" form-group mt-3">
+                  <input type="date" class="form-control" name="date" id="date" placeholder="date" required>
+                </div>
               <div class="form-group mt-3">
                 <input type="text" class="form-control" name="subject" id="subject" placeholder="Objet" required>
               </div>
@@ -716,18 +719,60 @@
                 <div class="sent-message">Votre message a bien été transmis !</div>
               </div>
               <div class="text-center"><button type="submit">Envoyez</button></div>
-            <?php
+              <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
-              if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                $name = $_POST['name'];
-                $email = $_POST['email'];
-                $subject = $_POST['subject'];
-                $message = $_POST['message'];
+// Inclure l'autoloader de Composer (si vous avez installé PHPMailer via Composer)
+require 'vendor/autoload.php';
 
-              // TODO: Process the data (e.g., send an email).
+// Vérifiez si le formulaire a été soumis
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $subject = $_POST['subject'];
+    $message = $_POST['message'];
+    $date = $_POST['date'];
 
-              }
-            ?>
+    // Inclure les fichiers PHPMailer
+    require 'path/to/PHPMailer/src/Exception.php';
+    require 'path/to/PHPMailer/src/PHPMailer.php';
+    require 'path/to/PHPMailer/src/SMTP.php';
+    // Crée une nouvelle instance de PHPMailer
+    $mail = new PHPMailer(true);
+
+    try {
+        // Configuration du serveur SMTP
+        $mail->isSMTP();
+        $mail->Host = 'smtp.example.com'; // Remplacez par le serveur SMTP de votre fournisseur
+        $mail->SMTPAuth = true;
+        $mail->Username = 'votre_email@example.com'; // Remplacez par votre adresse e-mail
+        $mail->Password = 'votre_mot_de_passe'; // Remplacez par votre mot de passe
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // Activer le chiffrement TLS
+        $mail->Port = 587; // Le port SMTP
+
+        // Configurer l'expéditeur et le destinataire
+        $mail->setFrom('votre_email@example.com', 'Nom de l\'Expéditeur'); // Remplacez par votre adresse e-mail et nom
+        $mail->addAddress($email, $name); // Adresse e-mail du destinataire
+
+        // Contenu de l'e-mail
+        $mail->isHTML(true);
+        $mail->Subject = $subject;
+        $mail->Body = "<h2>Nouveau message de contact</h2>
+                       <p><strong>Nom:</strong> $name</p>
+                       <p><strong>E-mail:</strong> $email</p>
+                       <p><strong>Date:</strong> $date</p>
+                       <p><strong>Message:</strong><br>$message</p>";
+
+        // Envoyer l'e-mail
+        $mail->send();
+        echo '<div class="sent-message">Votre message a bien été transmis !</div>';
+    } catch (Exception $e) {
+        echo '<div class="error-message">Le message n\'a pas pu être envoyé. Erreur: ', $mail->ErrorInfo, '</div>';
+    }
+}
+?>
+
             </form>
           </div><!-- End Contact Form -->
           
@@ -745,7 +790,7 @@
     <div class="container">
       <div class="row gy-4">
         <div class="col-lg-5 col-md-12 footer-info">
-          <a href="acceuil.html" class="logo d-flex align-items-center">
+          <a href="index.php" class="logo d-flex align-items-center">
             <span>Le Chaudron</span>
           </a>
           <p>Dans un cadre chaleureux et atypique !</br>
