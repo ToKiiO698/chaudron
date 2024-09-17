@@ -734,7 +734,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     require 'PHPMailer/src/Exception.php';
     require 'PHPMailer/src/PHPMailer.php';
-    require 'to/PHPMailer/src/SMTP.php';
+    require 'PHPMailer/src/SMTP.php';
     // Crée une nouvelle instance 
     $mail = new PHPMailer(true);
 
