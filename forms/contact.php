@@ -1,50 +1,41 @@
 <?php
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
+  /**
+  * Requires the "PHP Email Form" library
+  * The "PHP Email Form" library is available only in the pro version of the template
+  * The library should be uploaded to: vendor/php-email-form/php-email-form.php
+  * For more info and help: https://bootstrapmade.com/php-email-form/
+  */
 
+  // Replace contact@example.com with your real receiving email address
+  $receiving_email_address = 'a.cob@outlook.fr';
 
-// Vérification si formulaire a été soumis
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $subject = $_POST['subject'];
-    $message = $_POST['message'];
-    $date = $_POST['date'];
+  if( file_exists($php_email_form = '../assets/vendor/php-email-form/php-email-form.php' )) {
+    include( $php_email_form );
+  } else {
+    die( 'Unable to load the "PHP Email Form" Library!');
+  }
 
-    require 'path/to/PHPMailer/src/Exception.php';
-    require 'path/to/PHPMailer/src/PHPMailer.php';
-    require 'path/to/PHPMailer/src/SMTP.php';
-    // Crée une nouvelle instance 
-    $mail = new PHPMailer(true);
+  $contact = new PHP_Email_Form;
+  $contact->ajax = true;
+  
+  $contact->to = $receiving_email_address;
+  $contact->from_name = $_POST['name'];
+  $contact->from_email = $_POST['email'];
+  $contact->subject = $_POST['subject'];
 
-    try {
-        // serveur SMTP
-        $mail->isSMTP();
-        $mail->Host = 'smtp.example.com'; // Remplacez par le serveur SMTP de votre fournisseur
-        $mail->SMTPAuth = true;
-        $mail->Username = 'khudaverdiyev.nihad@gmail.com'; // Remplacez par votre adresse e-mail
-        $mail->Password = 'guns rfrz avbq spzd'; // Remplacez par votre mot de passe
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // Activer le chiffrement TLS
-        $mail->Port = 587; // Le port SMTP
+  // Uncomment below code if you want to use SMTP to send emails. You need to enter your correct SMTP credentials
+  /*
+  $contact->smtp = array(
+    'host' => 'example.com',
+    'username' => 'example',
+    'password' => 'pass',
+    'port' => '587'
+  );
+  */
 
-        // l'expéditeur et destinataire
-        $mail->setFrom('khudaverdiyev.nihad@gmail.com', 'Chaudron baveur'); 
-        $mail->addAddress($email, $name); 
+  $contact->add_message( $_POST['name'], 'From');
+  $contact->add_message( $_POST['email'], 'Email');
+  $contact->add_message( $_POST['message'], 'Message', 10);
 
-        // Contenu e-mail
-        $mail->isHTML(true);
-        $mail->Subject = $subject;
-        $mail->Body = "<h2>Nouveau message de contact</h2>
-                       <p><strong>Nom:</strong> $name</p>
-                       <p><strong>E-mail:</strong> $email</p>
-                       <p><strong>Date:</strong> $date</p>
-                       <p><strong>Message:</strong><br>$message</p>";
-
-        // Envoyer l'e-mail
-        $mail->send();
-        echo '<div class="sent-message">Votre message a bien été transmis !</div>';
-    } catch (Exception $e) {
-        echo '<div class="error-message">Le message n\'a pas pu être envoyé. Erreur: ', $mail->ErrorInfo, '</div>';
-    }
-}
+  echo $contact->send();
 ?>
