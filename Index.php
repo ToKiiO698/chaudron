@@ -2,10 +2,10 @@
 <html lang="fr">
 
 <head>
-  <meta charset="utf-8 ">
+  <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Restaurant | Le Chaudron</title>
+  <title>Restarant Le Chaudron</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -49,12 +49,12 @@
   <header id="header" class="header d-flex align-items-center">
 
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-      <a href="accueil.html" class="logo d-flex align-items-center">
+      <a href="acceuil.html" class="logo d-flex align-items-center">
         <h1>Le Chaudron<span>.</span></h1>
       </a>
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="#accueil">Accueil</a></li>
+          <li><a href="#acceuil">Acceuil</a></li>
           <li><a href="#a_propos">A propos</a></li>
           <li><a href="#produits">Plats & Menus</a></li>
           <li><a href="#services">Services</a></li>
@@ -79,11 +79,11 @@
         <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center text-center text-lg-start">
           <h2>Bienvenue au <span>Chaudron</span></h2>
             <p>Dans un cadre chaleureux et atypique ! </br>
-              Chargé d'histoire.
+              Chargé histoire.
           </p>
           <div class="d-flex justify-content-center justify-content-lg-start">
             <a href="#contact" class="btn-get-started">Nous contacter</a>
-            <a href="#contact" class="btn-get-started">Réservez une table</a>          </div>
+            <a href="#contact" class="btn-get-started">Reservez une table</a>          </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2">
           <img src="assets/img/background-home.png" class="img-fluid background-image-header background-image-header-position-left background-image-header-position-bottom" alt="" data-aos="zoom-out" data-aos-delay="100">
@@ -208,12 +208,8 @@
     
                 <div class="col-xl-4 col-md-6 portfolio-item filter-product">
                   <div class="portfolio-wrap">
-<<<<<<< HEAD
                     <a href="assets/img/menu/carte.png" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/menu/carte.png" class="img-fluid" alt="">
-=======
-                    <a href="assets/img/menu/carte.png" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/menu/Medaillon_Dinde.jpg" class="img-fluid" alt="">
->>>>>>> 54ef8bb96d83584d5c8293f182345ea4e90f7945
-                      <div class="portfolio-info">
+                    <div class="portfolio-info">
                       <h4>Plats chaud 1</h4>
                       <p>plats chaud 1</p>
                     </div></a>
@@ -222,11 +218,7 @@
     
                 <div class="col-xl-4 col-md-6 portfolio-item filter-branding">
                   <div class="portfolio-wrap">
-<<<<<<< HEAD
                     <a href="assets/img/portfolio/branding-1.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/portfolio/branding-1.jpg" class="img-fluid" alt=""></a>
-=======
-                    <a href="assets/img/portfolio/branding-1.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/menu/glace.png" class="img-fluid" alt=""></a>
->>>>>>> 54ef8bb96d83584d5c8293f182345ea4e90f7945
                     <div class="portfolio-info">
                       <h4>Dessert 1</h4>
                       <p>Dessert 1</p>
@@ -236,11 +228,7 @@
     
                 <div class="col-xl-4 col-md-6 portfolio-item filter-books">
                   <div class="portfolio-wrap">
-<<<<<<< HEAD
                     <a href="assets/img/portfolio/books-1.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/portfolio/books-1.jpg" class="img-fluid" alt=""></a>
-=======
-                    <a href="assets/img/portfolio/books-1.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/menu/ricard.webp" class="img-fluid" alt=""></a>
->>>>>>> 54ef8bb96d83584d5c8293f182345ea4e90f7945
                     <div class="portfolio-info">
                       <h4>Boisson 1</h4>
                       <p>Boisson 1</p>
@@ -250,11 +238,7 @@
     
                 <div class="col-xl-4 col-md-6 portfolio-item filter-app">
                   <div class="portfolio-wrap">
-<<<<<<< HEAD
                     <a href="assets/img/portfolio/app-2.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/portfolio/app-2.jpg" class="img-fluid" alt=""></a>
-=======
-                    <a href="assets/img/portfolio/app-2.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/menu/foie.jpg" class="img-fluid" alt=""></a>
->>>>>>> 54ef8bb96d83584d5c8293f182345ea4e90f7945
                     <div class="portfolio-info">
                       <h4>Entrée 1</h4>
                       <p>Entrée 1</p>
@@ -264,11 +248,7 @@
     
                 <div class="col-xl-4 col-md-6 portfolio-item filter-product">
                   <div class="portfolio-wrap">
-<<<<<<< HEAD
                     <a href="assets/img/portfolio/product-2.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/portfolio/product-2.jpg" class="img-fluid" alt=""></a>
-=======
-                    <a href="assets/img/portfolio/product-2.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/menu/quenelle.webp" class="img-fluid" alt=""></a>
->>>>>>> 54ef8bb96d83584d5c8293f182345ea4e90f7945
                     <div class="portfolio-info">
                       <h4>Plats 2</a></h4>
                       <p>Plats 2</p>
@@ -278,11 +258,7 @@
     
                 <div class="col-xl-4 col-md-6 portfolio-item filter-branding">
                   <div class="portfolio-wrap">
-<<<<<<< HEAD
                     <a href="assets/img/portfolio/branding-2.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/portfolio/branding-2.jpg" class="img-fluid" alt=""></a>
-=======
-                    <a href="assets/img/portfolio/branding-2.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/menu/fraisier.jpg" class="img-fluid" alt=""></a>
->>>>>>> 54ef8bb96d83584d5c8293f182345ea4e90f7945
                     <div class="portfolio-info">
                       <h4>Dessert 2</h4>
                       <p>Dessert 2</p>
@@ -292,11 +268,7 @@
     
                 <div class="col-xl-4 col-md-6 portfolio-item filter-books">
                   <div class="portfolio-wrap">
-<<<<<<< HEAD
                     <a href="assets/img/portfolio/books-2.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/portfolio/books-2.jpg" class="img-fluid" alt=""></a>
-=======
-                    <a href="assets/img/portfolio/books-2.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/menu/vin.webp" class="img-fluid" alt=""></a>
->>>>>>> 54ef8bb96d83584d5c8293f182345ea4e90f7945
                     <div class="portfolio-info">
                       <h4>Boisson 2</h4>
                       <p>Boisson 2</p>
@@ -306,11 +278,7 @@
     
                 <div class="col-xl-4 col-md-6 portfolio-item filter-app">
                   <div class="portfolio-wrap">
-<<<<<<< HEAD
                     <a href="assets/img/portfolio/app-3.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/portfolio/app-3.jpg" class="img-fluid" alt=""></a>
-=======
-                    <a href="assets/img/portfolio/app-3.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/menu/salade.jpeg" class="img-fluid" alt=""></a>
->>>>>>> 54ef8bb96d83584d5c8293f182345ea4e90f7945
                     <div class="portfolio-info">
                       <h4>Entrée 2</h4>
                       <p>Entrée 2</p>
@@ -320,11 +288,7 @@
     
                 <div class="col-xl-4 col-md-6 portfolio-item filter-product">
                   <div class="portfolio-wrap">
-<<<<<<< HEAD
                     <a href="assets/img/portfolio/product-3.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/portfolio/product-3.jpg" class="img-fluid" alt=""></a>
-=======
-                    <a href="assets/img/portfolio/product-3.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/menu/burger.jpg" class="img-fluid" alt=""></a>
->>>>>>> 54ef8bb96d83584d5c8293f182345ea4e90f7945
                     <div class="portfolio-info">
                       <h4>Plats 3</h4>
                       <p>Plats 3</p>
@@ -334,11 +298,7 @@
     
                 <div class="col-xl-4 col-md-6 portfolio-item filter-branding">
                   <div class="portfolio-wrap">
-<<<<<<< HEAD
                     <a href="assets/img/portfolio/branding-3.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/portfolio/branding-3.jpg" class="img-fluid" alt=""></a>
-=======
-                    <a href="assets/img/portfolio/branding-3.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/menu/ardeche.jpeg" class="img-fluid" alt=""></a>
->>>>>>> 54ef8bb96d83584d5c8293f182345ea4e90f7945
                     <div class="portfolio-info">
                       <h4>Dessert 3</h4>
                       <p>Dessert 3</p>
@@ -348,11 +308,7 @@
     
                 <div class="col-xl-4 col-md-6 portfolio-item filter-books">
                   <div class="portfolio-wrap">
-<<<<<<< HEAD
                     <a href="assets/img/portfolio/books-3.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/portfolio/books-3.jpg" class="img-fluid" alt=""></a>
-=======
-                    <a href="assets/img/portfolio/books-3.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/menu/mojito.webp" class="img-fluid" alt=""></a>
->>>>>>> 54ef8bb96d83584d5c8293f182345ea4e90f7945
                     <div class="portfolio-info">
                       <h4>Boisson 3</h4>
                       <p>Boisson 3</p>
@@ -362,11 +318,7 @@
 
                 <div class="col-xl-4 col-md-6 portfolio-item filter-app">
                   <div class="portfolio-wrap">
-<<<<<<< HEAD
                     <a href="assets/img/portfolio/app-2.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/portfolio/app-2.jpg" class="img-fluid" alt=""></a>
-=======
-                    <a href="assets/img/portfolio/app-2.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/menu/gaspacho.jpg" class="img-fluid" alt=""></a>
->>>>>>> 54ef8bb96d83584d5c8293f182345ea4e90f7945
                     <div class="portfolio-info">
                       <h4>Entrée 3</h4>
                       <p>Entrée 3</p>
@@ -395,7 +347,7 @@
 
         <div class="section-header">
           <h2>Nos services</h2>
-          <p>Veuillez découvrir les service que nous vous proposons pour votre confort tous au long de votre repas. </p>
+          <p>Veuillez découvrir les ervice que nous vous proposons pour votre confort tous au long de votre repas. </p>
         </div>
 
         <div class="row gy-4" data-aos="fade-up" data-aos-delay="100">
@@ -446,7 +398,7 @@
               <img src="assets/img/services/bebe.png" class="img-fluid  " alt="">
               </div>
               <h3>Adapter aux enfants</h3>
-              <p>Nous disposons de chaises hautes adaptées aux enfants et d'un menu Marmiton adapté pour eux.</p>
+              <p>Nous sommes équipés de chaises hautes pour les enfants, et d'un menus Marmiton adapté pour les enfants</p>
             </div>
           </div><!-- End Service Item -->
 
@@ -455,7 +407,7 @@
               <div class="icon">
                 <i class="bi bi-chat-square-text"></i>
               </div>
-              <h3>Dolori Arcteto</h3>
+              <h3>Dolori Architecto</h3>
               <p>Hic molestias ea quibusdam eos. Fugiat enim doloremque aut neque non et debitis iure. Corrupti recusandae ducimus enim.</p>
             </div>
           </div><!-- End Service Item -->
@@ -793,7 +745,7 @@
     <div class="container">
       <div class="row gy-4">
         <div class="col-lg-5 col-md-12 footer-info">
-          <a href="acceuil.html" class="logo d-flex align-items-center">
+          <a href="index.php" class="logo d-flex align-items-center">
             <span>Le Chaudron</span>
           </a>
           <p>Dans un cadre chaleureux et atypique !</br>
