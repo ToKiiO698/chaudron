@@ -739,7 +739,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
         // serveur SMTP
         $mail->isSMTP();
-        $mail->Host = 'smtp.example.com'; // Remplacez par le serveur SMTP de votre fournisseur
+        $mail->Host = 'smtp.gmail.com'; // Remplacez par le serveur SMTP de votre fournisseur
         $mail->SMTPAuth = true;
         $mail->Username = 'khudaverdiyev.nihad@gmail.com'; // Remplacez par votre adresse e-mail
         $mail->Password = 'guns rfrz avbq spzd'; // Remplacez par votre mot de passe
