@@ -704,8 +704,8 @@
                   <input type="email" class="form-control" name="email" id="email" placeholder="Votre e-mail" required>
                 </div>
               </div>
-              <div class="col-md-6 form-group mt-3">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Votre e-mail" required>
+              <div class=" form-group mt-3">
+                  <input type="date" class="form-control" name="date" id="date" placeholder="date" required>
                 </div>
               <div class="form-group mt-3">
                 <input type="text" class="form-control" name="subject" id="subject" placeholder="Objet" required>
