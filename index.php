@@ -693,95 +693,94 @@
             </div>
 
           </div>
+          <?php
+ob_start();
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+// Afficher les erreurs PHP
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+// Vérification si le formulaire a été soumis
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $subject = $_POST['subject'];
+    $message = $_POST['message'];
+
+    require 'PHPMailer/src/Exception.php';
+    require 'PHPMailer/src/PHPMailer.php';
+    require 'PHPMailer/src/SMTP.php';
+
+    $mail = new PHPMailer(true);
+
+    try {
+        // Configuration du serveur SMTP
+        $mail->isSMTP();
+        $mail->Host = 'smtp.gmail.com';
+        $mail->SMTPAuth = true;
+        $mail->Username = 'khudaverdiyev.nihad@gmail.com';
+        $mail->Password = 'guns rfrz avbq spzd';
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        $mail->Port = 587;
+
+        // 1. Envoyer un e-mail à l'utilisateur
+        $mail->clearAddresses();
+        $mail->setFrom('khudaverdiyev.nihad@gmail.com', 'Chaudron baveur');
+        $mail->addAddress($email, $name);
+        $mail->isHTML(true);
+        $mail->Subject = "Salut $name";
+        $mail->Body = "<h2>Merci d'avoir réservé chez nous, $name!</h2><p>Nous avons bien reçu votre message.</p>";
+        $mail->send();
+
+        // 2. Envoyer un e-mail à l'adresse de réception
+        $mail->clearAddresses();
+        $mail->addAddress('khudaverdiyev.nihad@gmail.com', 'Chaudron baveur');
+        $mail->Subject = "Nouveau message de contact";
+        $mail->Body = "<h2>Nouveau message de contact</h2><p><strong>Nom:</strong> $name</p><p><strong>E-mail:</strong> $email</p><p><strong>Objet:</strong> $subject</p><p><strong>Message:</strong><br>$message</p>";
+        $mail->send();
+
+        // Redirection alternative (utiliser l'une des deux options)
+        echo '<meta http-equiv="refresh" content="0;url=' . htmlspecialchars($_SERVER['PHP_SELF']) . '">';
+        // Ou utilisez cette redirection JavaScript
+        // echo '<script type="text/javascript">window.location.href="' . htmlspecialchars($_SERVER['PHP_SELF']) . '";</script>';
+        exit();
+
+    } catch (Exception $e) {
+        echo '<div class="error-message">Le message n\'a pas pu être envoyé. Erreur: ' . $mail->ErrorInfo . '</div>';
+    }
+}
+ob_end_flush();
+?>
+
 
           <div class="col-lg-8">
-    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" role="form" class="php-email-form">
-        <div class="row">
-            <div class="col-md-6 form-group">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Votre Nom" required>
-            </div>
-            <div class="col-md-6 form-group mt-3 mt-md-0">
-                <input type="email" class="form-control" name="email" id="email" placeholder="Votre e-mail" required>
-            </div>
-        </div>
-        <div class="form-group mt-3">
-            <input type="date" class="form-control" name="date" id="date" placeholder="date" required>
-        </div>
-        <div class="form-group mt-3">
-            <input type="text" class="form-control" name="subject" id="subject" placeholder="Objet" required>
-        </div>
-        <div class="form-group mt-3">
-            <textarea class="form-control" name="message" rows="7" placeholder="Message" required></textarea>
-        </div>
-        <div class="my-3">
-            <div class="error-message"></div>
-            <div class="sent-message"></div>
-        </div>
-        <div class="text-center"><button type="submit">Envoyez</button></div>
-    </form>
+            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" role="form" class="php-email-form">
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Votre Nom" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Votre e-mail" required>
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Objet" required>
+              </div>
+              <div class="form-group mt-3">
+                <textarea class="form-control" name="message" rows="7" placeholder="Message" required></textarea>
+              </div>
+              <div class="my-3">
+                <div class="loading">En cours d'envoie</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Votre message a bien été transmis !</div>
+              </div>
+              <div class="text-center"><button type="submit">Envoyez</button></div>
+            </form>
+          </div><!-- End Contact Form -->
+         
 
-    <?php
-    use PHPMailer\PHPMailer\PHPMailer;
-    use PHPMailer\PHPMailer\Exception;
-
-    
-
-    // Vérification si le formulaire a été soumis
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $name = $_POST['name'];
-        $email = $_POST['email'];
-        $subject = $_POST['subject'];
-        $message = $_POST['message'];
-        $date = $_POST['date'];
-
-        require 'PHPMailer/src/Exception.php';
-        require 'PHPMailer/src/PHPMailer.php';
-        require 'PHPMailer/src/SMTP.php';
-
-        // Créer une nouvelle instance
-        $mail = new PHPMailer(true);
-
-        try {
-            // Configuration du serveur SMTP
-            $mail->isSMTP();
-            $mail->Host = 'smtp.gmail.com'; // Remplacez par le serveur SMTP de votre fournisseur
-            $mail->SMTPAuth = true;
-            $mail->Username = 'khudaverdiyev.nihad@gmail.com'; // Remplacez par votre adresse e-mail
-            $mail->Password = 'guns rfrz avbq spzd'; // Remplacez par votre mot de passe
-            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // Activer le chiffrement TLS
-            $mail->Port = 587; // Le port SMTP
-
-            // 1. Envoyer un e-mail à l'adresse e-mail fournie par l'utilisateur
-            $mail->clearAddresses(); // Effacer les adresses précédentes
-            $mail->setFrom('khudaverdiyev.nihad@gmail.com', 'Chaudron baveur'); 
-            $mail->addAddress($email, $name); 
-            $mail->isHTML(true);
-            $mail->Subject = "Salut $name";
-            $mail->Body = "<h2>Merci d'avoir réservé chez nous, $name!</h2>
-                           <p>Nous avons bien reçu votre message et nous reviendrons vers vous rapidement.</p>";
-            $mail->send();
-
-            // 2. Envoyer un e-mail à l'adresse e-mail spécifiée
-            $mail->clearAddresses(); // Effacer les adresses précédentes
-            $mail->addAddress('khudaverdiyev.nihad@gmail.com', 'Chaudron baveur'); // Adresse e-mail de réception
-            $mail->Subject = "Nouveau message de contact";
-            $mail->Body = "<h2>Nouveau message de contact</h2>
-                           <p><strong>Nom:</strong> $name</p>
-                           <p><strong>E-mail:</strong> $email</p>
-                           <p><strong>Date:</strong> $date</p>
-                           <p><strong>Objet:</strong> $subject</p>
-                           <p><strong>Message:</strong><br>$message</p>";
-
-            $mail->send();
-            echo '<div class="sent-message">Votre message a bien été transmis !</div>';
-        } catch (Exception $e) {
-            echo '<div class="error-message">Le message n\'a pas pu être envoyé. Erreur: ' . $mail->ErrorInfo . '</div>';
-        }
-    }
-    ?>
-</div><!-- Fin du formulaire de contact -->
-
-          
 
         </div>
 
