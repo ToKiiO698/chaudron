@@ -719,19 +719,60 @@
                 <div class="sent-message">Votre message a bien été transmis !</div>
               </div>
               <div class="text-center"><button type="submit">Envoyez</button></div>
-            <?php
+              <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
-              if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                $name = $_POST['name'];
-                $email = $_POST['email'];
-                $subject = $_POST['subject'];
-                $message = $_POST['message'];
-                $date = $_POST['date'];
+// Inclure l'autoloader de Composer (si vous avez installé PHPMailer via Composer)
+require 'vendor/autoload.php';
 
-              // TODO: Process the data (e.g., send an email).
+// Vérifiez si le formulaire a été soumis
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $subject = $_POST['subject'];
+    $message = $_POST['message'];
+    $date = $_POST['date'];
 
-              }
-            ?>
+    // Inclure les fichiers PHPMailer
+    require 'path/to/PHPMailer/src/Exception.php';
+    require 'path/to/PHPMailer/src/PHPMailer.php';
+    require 'path/to/PHPMailer/src/SMTP.php';
+    // Crée une nouvelle instance de PHPMailer
+    $mail = new PHPMailer(true);
+
+    try {
+        // Configuration du serveur SMTP
+        $mail->isSMTP();
+        $mail->Host = 'smtp.example.com'; // Remplacez par le serveur SMTP de votre fournisseur
+        $mail->SMTPAuth = true;
+        $mail->Username = 'votre_email@example.com'; // Remplacez par votre adresse e-mail
+        $mail->Password = 'votre_mot_de_passe'; // Remplacez par votre mot de passe
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // Activer le chiffrement TLS
+        $mail->Port = 587; // Le port SMTP
+
+        // Configurer l'expéditeur et le destinataire
+        $mail->setFrom('votre_email@example.com', 'Nom de l\'Expéditeur'); // Remplacez par votre adresse e-mail et nom
+        $mail->addAddress($email, $name); // Adresse e-mail du destinataire
+
+        // Contenu de l'e-mail
+        $mail->isHTML(true);
+        $mail->Subject = $subject;
+        $mail->Body = "<h2>Nouveau message de contact</h2>
+                       <p><strong>Nom:</strong> $name</p>
+                       <p><strong>E-mail:</strong> $email</p>
+                       <p><strong>Date:</strong> $date</p>
+                       <p><strong>Message:</strong><br>$message</p>";
+
+        // Envoyer l'e-mail
+        $mail->send();
+        echo '<div class="sent-message">Votre message a bien été transmis !</div>';
+    } catch (Exception $e) {
+        echo '<div class="error-message">Le message n\'a pas pu être envoyé. Erreur: ', $mail->ErrorInfo, '</div>';
+    }
+}
+?>
+
             </form>
           </div><!-- End Contact Form -->
           
