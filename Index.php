@@ -2,10 +2,10 @@
 <html lang="fr">
 
 <head>
-  <meta charset="utf-8 ">
+  <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Restaurant | Le Chaudron</title>
+  <title>Restarant Le Chaudron</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -83,7 +83,7 @@
           </p>
           <div class="d-flex justify-content-center justify-content-lg-start">
             <a href="#contact" class="btn-get-started">Nous contacter</a>
-            <a href="#contact" class="btn-get-started">Réservez une table</a>          </div>
+            <a href="#contact" class="btn-get-started">Reservez une table</a>          </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2">
           <img src="assets/img/background-home.png" class="img-fluid background-image-header background-image-header-position-left background-image-header-position-bottom" alt="" data-aos="zoom-out" data-aos-delay="100">
@@ -347,7 +347,7 @@
 
         <div class="section-header">
           <h2>Nos services</h2>
-          <p>Veuillez découvrir les service que nous vous proposons pour votre confort tous au long de votre repas. </p>
+          <p>Veuillez découvrir les ervice que nous vous proposons pour votre confort tous au long de votre repas. </p>
         </div>
 
         <div class="row gy-4" data-aos="fade-up" data-aos-delay="100">
@@ -398,7 +398,7 @@
               <img src="assets/img/services/bebe.png" class="img-fluid  " alt="">
               </div>
               <h3>Adapter aux enfants</h3>
-              <p>Nous disposons de chaises hautes adaptées aux enfants et d'un menu Marmiton adapté pour eux.</p>
+              <p>Nous sommes équipés de chaises hautes pour les enfants, et d'un menus Marmiton adapté pour les enfants</p>
             </div>
           </div><!-- End Service Item -->
 
@@ -407,7 +407,7 @@
               <div class="icon">
                 <i class="bi bi-chat-square-text"></i>
               </div>
-              <h3>Dolori Arcteto</h3>
+              <h3>Dolori Architecto</h3>
               <p>Hic molestias ea quibusdam eos. Fugiat enim doloremque aut neque non et debitis iure. Corrupti recusandae ducimus enim.</p>
             </div>
           </div><!-- End Service Item -->
@@ -745,7 +745,7 @@
     <div class="container">
       <div class="row gy-4">
         <div class="col-lg-5 col-md-12 footer-info">
-          <a href="acceuil.html" class="logo d-flex align-items-center">
+          <a href="index.php" class="logo d-flex align-items-center">
             <span>Le Chaudron</span>
           </a>
           <p>Dans un cadre chaleureux et atypique !</br>
