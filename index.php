@@ -724,9 +724,7 @@
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\Exception;
 
-    // Afficher les erreurs PHP
-    error_reporting(E_ALL);
-    ini_set('display_errors', 1);
+    
 
     // Vérification si le formulaire a été soumis
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
