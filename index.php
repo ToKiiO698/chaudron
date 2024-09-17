@@ -723,10 +723,9 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-// Inclure l'autoloader de Composer (si vous avez installé PHPMailer via Composer)
 require 'vendor/autoload.php';
 
-// Vérifiez si le formulaire a été soumis
+// Vérification si formulaire a été soumis
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST['name'];
     $email = $_POST['email'];
@@ -734,28 +733,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message = $_POST['message'];
     $date = $_POST['date'];
 
-    // Inclure les fichiers PHPMailer
     require 'path/to/PHPMailer/src/Exception.php';
     require 'path/to/PHPMailer/src/PHPMailer.php';
     require 'path/to/PHPMailer/src/SMTP.php';
-    // Crée une nouvelle instance de PHPMailer
+    // Crée une nouvelle instance 
     $mail = new PHPMailer(true);
 
     try {
-        // Configuration du serveur SMTP
+        // serveur SMTP
         $mail->isSMTP();
         $mail->Host = 'smtp.example.com'; // Remplacez par le serveur SMTP de votre fournisseur
         $mail->SMTPAuth = true;
-        $mail->Username = 'votre_email@example.com'; // Remplacez par votre adresse e-mail
-        $mail->Password = 'votre_mot_de_passe'; // Remplacez par votre mot de passe
+        $mail->Username = 'khudaverdiyev.nihad@gmail.com'; // Remplacez par votre adresse e-mail
+        $mail->Password = 'guns rfrz avbq spzd'; // Remplacez par votre mot de passe
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // Activer le chiffrement TLS
         $mail->Port = 587; // Le port SMTP
 
-        // Configurer l'expéditeur et le destinataire
-        $mail->setFrom('votre_email@example.com', 'Nom de l\'Expéditeur'); // Remplacez par votre adresse e-mail et nom
-        $mail->addAddress($email, $name); // Adresse e-mail du destinataire
+        // l'expéditeur et destinataire
+        $mail->setFrom('khudaverdiyev.nihad@gmail.com', 'Chaudron baveur'); 
+        $mail->addAddress($email, $name); 
 
-        // Contenu de l'e-mail
+        // Contenu e-mail
         $mail->isHTML(true);
         $mail->Subject = $subject;
         $mail->Body = "<h2>Nouveau message de contact</h2>
