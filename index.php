@@ -2,7 +2,7 @@
 <html lang="fr">
 
 <head>
-  <meta charset="utf-8 ">
+  <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   <title>Restarant Le Chaudron</title>
@@ -49,7 +49,7 @@
   <header id="header" class="header d-flex align-items-center">
 
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-      <a href="index.php" class="logo d-flex align-items-center">
+      <a href="acceuil.html" class="logo d-flex align-items-center">
         <h1>Le Chaudron<span>.</span></h1>
       </a>
       <nav id="navbar" class="navbar">
@@ -95,7 +95,9 @@
 
     </div>
   </section>
-  <!-- End Hero Section -->  <main id="main">
+  <!-- End Hero Section -->
+
+  <main id="main">
 
     <!-- ======= About Us Section ======= -->
     <section id="a_propos" class="about">
@@ -701,10 +703,10 @@
                 <div class="col-md-6 form-group mt-3 mt-md-0">
                   <input type="email" class="form-control" name="email" id="email" placeholder="Votre e-mail" required>
                 </div>
-              </div>
-              <div class="col-md-6 form-group mt-3 mt-md-0">
+                <div class="col-md-6 form-group mt-3 mt-md-0">
                   <input type="email" class="form-control" name="email" id="email" placeholder="Votre e-mail" required>
                 </div>
+              </div>
               <div class="form-group mt-3">
                 <input type="text" class="form-control" name="subject" id="subject" placeholder="Objet" required>
               </div>
